@@ -1,0 +1,1 @@
+use single normal timer and implement as lab 8 (delay less than required and interrupt when counter reaches the required delay)

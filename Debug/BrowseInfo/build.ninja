@@ -1,0 +1,100 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = D$:\IAR\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++D$:\IAR\common\bin\XclFileGenerator.exe $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = D$:\IAR\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++D$:\IAR\common\bin\SourceIndexer.exe $flags
+
+rule MAKEBROWSE
+  command = D$:\IAR\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++D$:\IAR\common\bin\makeBrowseData.exe $flags
+
+rule PDBLINK
+  command = D$:\IAR\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++D$:\IAR\common\bin\PbdLink.exe $flags
+
+
+
+#Build steps
+build E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Buttons.xcl : COMPILER_XCL 
+  xclcommand = -source_file "E$:\Embedded$ -$ 211\Project\Buttons.c" -xcl_file "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Buttons.xcl" -macro_file "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Buttons.tmp" -icc_path D$:\IAR\arm\bin\iccarm.exe
+  flags = "E$:\Embedded$ -$ 211\Project\Buttons.c" -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "E$:\Embedded$ -$ 211\Project\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\arm\inc\c\DLib_Config_Normal.h -I D$:\TivaWare\ -Ol --predef_macros "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Buttons.tmp"
+  rspfile_name = E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Buttons.xcl.rsp
+
+build E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\CarTraffic.xcl : COMPILER_XCL 
+  xclcommand = -source_file "E$:\Embedded$ -$ 211\Project\CarTraffic.c" -xcl_file "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\CarTraffic.xcl" -macro_file "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\CarTraffic.tmp" -icc_path D$:\IAR\arm\bin\iccarm.exe
+  flags = "E$:\Embedded$ -$ 211\Project\CarTraffic.c" -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "E$:\Embedded$ -$ 211\Project\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\arm\inc\c\DLib_Config_Normal.h -I D$:\TivaWare\ -Ol --predef_macros "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\CarTraffic.tmp"
+  rspfile_name = E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\CarTraffic.xcl.rsp
+
+build E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "E$:\Embedded$ -$ 211\Project\main.c" -xcl_file "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main.xcl" -macro_file "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main.tmp" -icc_path D$:\IAR\arm\bin\iccarm.exe
+  flags = "E$:\Embedded$ -$ 211\Project\main.c" -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "E$:\Embedded$ -$ 211\Project\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\arm\inc\c\DLib_Config_Normal.h -I D$:\TivaWare\ -Ol --predef_macros "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main.tmp"
+  rspfile_name = E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main.xcl.rsp
+
+build E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\PedTraffic.xcl : COMPILER_XCL 
+  xclcommand = -source_file "E$:\Embedded$ -$ 211\Project\PedTraffic.c" -xcl_file "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\PedTraffic.xcl" -macro_file "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\PedTraffic.tmp" -icc_path D$:\IAR\arm\bin\iccarm.exe
+  flags = "E$:\Embedded$ -$ 211\Project\PedTraffic.c" -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "E$:\Embedded$ -$ 211\Project\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\arm\inc\c\DLib_Config_Normal.h -I D$:\TivaWare\ -Ol --predef_macros "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\PedTraffic.tmp"
+  rspfile_name = E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\PedTraffic.xcl.rsp
+
+build E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\startup_ewarm.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\TivaWare\examples\boards\ek-tm4c123gxl\hello\startup_ewarm.c -xcl_file "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\startup_ewarm.xcl" -macro_file "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\startup_ewarm.tmp" -icc_path D$:\IAR\arm\bin\iccarm.exe
+  flags = D$:\TivaWare\examples\boards\ek-tm4c123gxl\hello\startup_ewarm.c -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "E$:\Embedded$ -$ 211\Project\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\arm\inc\c\DLib_Config_Normal.h -I D$:\TivaWare\ -Ol --predef_macros "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\startup_ewarm.tmp"
+  rspfile_name = E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\startup_ewarm.xcl.rsp
+
+build E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Timers.xcl : COMPILER_XCL 
+  xclcommand = -source_file "E$:\Embedded$ -$ 211\Project\Timers.c" -xcl_file "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Timers.xcl" -macro_file "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Timers.tmp" -icc_path D$:\IAR\arm\bin\iccarm.exe
+  flags = "E$:\Embedded$ -$ 211\Project\Timers.c" -D ewarm -D PART_TM4C123GH6PM -D TARGET_IS_TM4C123_RB1 -o "E$:\Embedded$ -$ 211\Project\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\IAR\arm\inc\c\DLib_Config_Normal.h -I D$:\TivaWare\ -Ol --predef_macros "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Timers.tmp"
+  rspfile_name = E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Timers.xcl.rsp
+
+build E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Buttons.pbi : INDEXER E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Buttons.xcl |  $
+E$:\Embedded$ -$ 211\Project\Buttons.c
+  flags = "-out=E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Buttons.pbi" -f "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Buttons.xcl"
+
+build E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\CarTraffic.pbi : INDEXER E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\CarTraffic.xcl |  $
+E$:\Embedded$ -$ 211\Project\CarTraffic.c
+  flags = "-out=E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\CarTraffic.pbi" -f "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\CarTraffic.xcl"
+
+build E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main.pbi : INDEXER E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main.xcl |  $
+E$:\Embedded$ -$ 211\Project\main.c
+  flags = "-out=E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main.pbi" -f "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main.xcl"
+
+build E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\PedTraffic.pbi : INDEXER E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\PedTraffic.xcl |  $
+E$:\Embedded$ -$ 211\Project\PedTraffic.c
+  flags = "-out=E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\PedTraffic.pbi" -f "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\PedTraffic.xcl"
+
+build E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\startup_ewarm.pbi : INDEXER E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\startup_ewarm.xcl |  $
+D$:\TivaWare\examples\boards\ek-tm4c123gxl\hello\startup_ewarm.c
+  flags = "-out=E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\startup_ewarm.pbi" -f "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\startup_ewarm.xcl"
+
+build E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Timers.pbi : INDEXER E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Timers.xcl |  $
+E$:\Embedded$ -$ 211\Project\Timers.c
+  flags = "-out=E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Timers.pbi" -f "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Timers.xcl"
+
+build E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main.pbw : MAKEBROWSE E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main.pbd
+  flags = "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main.pbd" -output "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main.pbw"
+
+build E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main_part0.pbi : PDBLINK E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Buttons.pbi |  $
+E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\CarTraffic.pbi
+  flags = -M "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main_part0.pbi" "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Buttons.pbi" "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\CarTraffic.pbi"
+
+build E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main_part1.pbi : PDBLINK E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main.pbi |  $
+E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\PedTraffic.pbi
+  flags = -M "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main_part1.pbi" "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main.pbi" "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\PedTraffic.pbi"
+
+build E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main_part2.pbi : PDBLINK E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\startup_ewarm.pbi |  $
+E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Timers.pbi
+  flags = -M "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main_part2.pbi" "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\startup_ewarm.pbi" "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\Timers.pbi"
+
+build E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main.pbd : PDBLINK E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main_part0.pbi |  $
+E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main_part1.pbi $
+E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main_part2.pbi
+  flags = -M "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main.pbd" "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main_part0.pbi" "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main_part1.pbi" "E$:\Embedded$ -$ 211\Project\Debug\BrowseInfo\main_part2.pbi"
+

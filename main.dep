@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>5</fileVersion>
+    <fileChecksum>1591959162</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup_ewarm.o</file>
+            <file>$PROJ_DIR$\Debug\Exe\main.out</file>
+            <file>D:\TivaWare\driverlib\ewarm\Exe\driverlib.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\Buttons.o</file>
+            <file>$PROJ_DIR$\Bitwise_Operation.h</file>
+            <file>D:\TivaWare\driverlib\interrupt.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\CarTraffic.o</file>
+            <file>D:\TivaWare\driverlib\gpio.h</file>
+            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\PedTraffic.o</file>
+            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+            <file>D:\TivaWare\inc\hw_nvic.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>D:\TivaWare\inc\hw_memmap.h</file>
+            <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C123GH6.icf</file>
+            <file>D:\TivaWare\driverlib\systick.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>D:\TivaWare\driverlib\timer.h</file>
+            <file>$PROJ_DIR$\Debug\List\main.map</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+            <file>$PROJ_DIR$\..\Tutorials\Project\Tutorial 4\Bitwise_Operation.h</file>
+            <file>$PROJ_DIR$\CarTraffic.c</file>
+            <file>D:\TivaWare\examples\boards\ek-tm4c123gxl\hello\startup_ewarm.c</file>
+            <file>$PROJ_DIR$\Buttons.h</file>
+            <file>$PROJ_DIR$\PedTraffic.h</file>
+            <file>$PROJ_DIR$\Timers.h</file>
+            <file>$PROJ_DIR$\PedTraffic.c</file>
+            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\Timers.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>D:\TivaWare\inc\hw_types.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+            <file>$PROJ_DIR$\tm4c123gh6pm.h</file>
+            <file>D:\TivaWare\inc\hw_gpio.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\CarTraffic.h</file>
+            <file>$PROJ_DIR$\Buttons.c</file>
+            <file>$PROJ_DIR$\main.c</file>
+            <file>$PROJ_DIR$\Timers.c</file>
+            <file>D:\TivaWare\driverlib\sysctl.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+        </outputs>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\main.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 21</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 16 12 31 9 0 3 4 7 11 32 23 1</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\CarTraffic.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 7</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 33 22 38 10 14 35 18 19 44 8 6 43 17 20 15 5 39 29 36</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>D:\TivaWare\examples\boards\ek-tm4c123gxl\hello\startup_ewarm.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 1</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 33 22 38 14 18 44 13 34</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\PedTraffic.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 11</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 33 22 38 10 14 35 18 19 44 8 6 43 17 20 15 5 39 28 29 36</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Buttons.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 4</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 33 22 38 10 14 35 18 19 44 8 6 43 17 20 37 15 5 27 39 28 29 36</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 23</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 33 22 38 10 14 35 18 19 44 8 6 43 17 20 37 15 5 27 39 28 29 36</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Timers.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 32</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 33 22 38 10 14 35 18 19 44 8 6 43 17 20 15 5 39 29 36</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 2 21</file>
+                </tool>
+            </outputs>
+        </file>
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>$PROJ_DIR$\main.c</name>
+            <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>[REBUILD_ALL]</name>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>
