@@ -5,9 +5,9 @@
 -funsigned-char
 -MD
 -MF
-E:\Embedded - 211\Project\Debug\BrowseInfo\startup_ewarm.pbi.dep
+E:\Embedded - 211\Project\Embd-project\Debug\BrowseInfo\startup_ewarm.pbi.dep
 -o
-E:\Embedded - 211\Project\Debug\BrowseInfo\startup_ewarm.pbi
+E:\Embedded - 211\Project\Embd-project\Debug\BrowseInfo\startup_ewarm.pbi
 -I
 D:\TivaWare\examples\boards\ek-tm4c123gxl\hello
 -I

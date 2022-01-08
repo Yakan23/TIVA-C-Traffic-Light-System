@@ -1,6 +1,7 @@
 #include "stdint.h"
 #include "stdbool.h"
 #include "stdio.h"
+#include "Timers.h"
 #include "Bitwise_Operation.h"
 #include "driverlib/interrupt.h"
 #include "driverlib/systick.h"
@@ -9,10 +10,6 @@
 #include "inc/hw_memmap.h"
 #include "inc/hw_gpio.h"
 #include "tm4c123gh6pm.h"
-
-
-
-
   
 #define PedButtons GPIO_PORTF_BASE 
 #define ButtonEW GPIO_PIN_0  //el 3al yemeen law el debugger cable foa2

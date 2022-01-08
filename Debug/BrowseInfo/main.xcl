@@ -1,15 +1,15 @@
-"E:\Embedded - 211\Project\main.c"
+"E:\Embedded - 211\Project\Embd-project\main.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -funsigned-char
 -MD
 -MF
-E:\Embedded - 211\Project\Debug\BrowseInfo\main.pbi.dep
+E:\Embedded - 211\Project\Embd-project\Debug\BrowseInfo\main.pbi.dep
 -o
-E:\Embedded - 211\Project\Debug\BrowseInfo\main.pbi
+E:\Embedded - 211\Project\Embd-project\Debug\BrowseInfo\main.pbi
 -I
-E:\Embedded - 211\Project
+E:\Embedded - 211\Project\Embd-project
 -I
 D:\TivaWare
 -I

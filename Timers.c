@@ -1,37 +1,16 @@
 #include "Timers.h"
 #include "CarTraffic.h"
-
-
-
-void initCar_NS(void)
-{
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
-    TimerDisable(CarTimerNS, TIMER_A);
-    SysCtlPeripheralReady(SYSCTL_PERIPH_TIMER0);
-    TimerConfigure(CarTimerNS, TIMER_CFG_A_PERIODIC);
-
-    IntEnable(INT_TIMER0A);
-    TimerIntEnable(CarTimerNS, TIMER_TIMA_TIMEOUT);
-    TimerEnable(CarTimerNS, TIMER_A);
-    
-    
-}
-
-
-      
-void initCar_EW(void)
+#include "PedTraffic.h"
+void initCarTimer(void)
 {
     SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER1);
-    TimerDisable(CarTimerEW, TIMER_A);
+    TimerDisable(CarTimer, TIMER_A);
     SysCtlPeripheralReady(SYSCTL_PERIPH_TIMER1);
-    TimerConfigure(CarTimerEW, TIMER_CFG_A_PERIODIC);
+    TimerConfigure(CarTimer, TIMER_CFG_A_PERIODIC);
 
-    //Enable interrupts after timeout
     IntEnable(INT_TIMER1A);
-    TimerIntEnable(CarTimerEW, TIMER_TIMA_TIMEOUT);
-    TimerEnable(CarTimerEW, TIMER_A);
-    
-    
+    TimerIntEnable(CarTimer, TIMER_TIMA_TIMEOUT);
+    TimerEnable(CarTimer, TIMER_A);
 }
 
 void initPedTimer(void)
@@ -40,69 +19,44 @@ void initPedTimer(void)
     TimerDisable(PedTimer, TIMER_A);
     SysCtlPeripheralReady(SYSCTL_PERIPH_TIMER2);
     TimerConfigure(PedTimer, TIMER_CFG_A_PERIODIC);
-  
+
     IntEnable(INT_TIMER2A);
     TimerIntEnable(PedTimer, TIMER_TIMA_TIMEOUT);
     TimerEnable(PedTimer, TIMER_A);
-    
 }
 
-
-
-
-
-
-
-void CarNS_Delay(uint32_t delay)
+void CarTraffic_Delay(uint32_t delay)
 {
     delay = (delay * 16000) - 1;
-    TimerLoadSet(CarTimerNS, TIMER_A, delay);
-    while(TimerIntStatus(CarTimerNS,true)!=1);
-     NS_Light();
-     TimerIntClear(CarTimerNS,TIMER_TIMA_TIMEOUT);
-            
-
-
-
+    TimerLoadSet(CarTimer, TIMER_A, delay);
 }
 
-void CarEW_Delay(uint32_t delay)
-{
-    delay = (delay * 16000) - 1;
-    TimerLoadSet(CarTimerEW, TIMER_A, delay);
-
-}
 void PedTimer_Delay(uint32_t delay)
 {
     delay = (delay * 16000) - 1;
     TimerLoadSet(PedTimer, TIMER_A, delay);
-    while( TimerIntStatus(PedTimer,true)!=1);
-
-         
-
-
 }
 
-
-
-void CarNS_TIMA(void)
+void CarTimer_TIMEOUT(void)
 {
-
-
+    TimerIntClear(CarTimer, TIMER_TIMA_TIMEOUT);
+    FSM_Car_State = FSM_CarTL[FSM_Car_State].Next;
+    CarTraffic_Delay(FSM_CarTL[FSM_Car_State].Time);
+    GPIOPinWrite(Car_BASE, GreenNS | YellowNS | RedNS, FSM_CarTL[FSM_Car_State].Out);
+    GPIOPinWrite(Car_BASE, GreenEW | YellowEW | RedEW, FSM_CarTL[FSM_Car_State].Out);
+    TimerEnable(CarTimer, TIMER_A);
 }
-
-
-void CarEW_TIMA(void)
-{
-
-
-
-
-}
-
-
 
 void PedTimer_TIMA(void)
 {
-  TimerIntClear(PedTimer,TIMER_TIMA_TIMEOUT);
+    //Disable the timer and Clear Interrupt
+    TimerIntClear(PedTimer,TIMER_TIMA_TIMEOUT);
+    //Fsm state change
+    FSM_Ped_State=FSM_PedTL[FSM_Ped_State].Next;
+
+    //Write All traffic Light LEDs
+  
+    GPIOPinWrite(Ped_BASE, PedGreen_NS|PedRed_NS, FSM_PedTL[FSM_Ped_State].PedOut);
+    GPIOPinWrite(Ped_BASE, PedGreen_EW|PedRed_EW, FSM_PedTL[FSM_Ped_State].PedOut);
+
 }

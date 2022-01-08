@@ -2,7 +2,7 @@
 #include "CarTraffic.h"
 #include "Timers.h"
 
-
+extern volatile uint8_t FSM_Ped_State;
 
 void initPedLight_EW(void)
 {
@@ -18,19 +18,8 @@ void initPedLight_NS(void)
   GPIOPinTypeGPIOOutput(GPIO_PORTC_BASE, GPIO_PIN_6 | GPIO_PIN_7);
 }
 
-void PedNS_Light(void)
-{
-
-  GPIOPinWrite(Car_BASE, GreenNS | YellowNS | RedNS, 0 | 0 | RedNS);
-  GPIOPinWrite(Ped_BASE, PedGreen_NS | PedRed_NS, PedGreen_NS | 0);
-  Timer0A_Delay(2000);
-}
-
-
-void PedEW_Light(void)
-{
-  GPIOPinWrite(Car_BASE, GreenEW | YellowEW | RedEW, 0 | 0 | RedEW);
-  GPIOPinWrite(Ped_BASE, PedGreen_NS,PedGreen_NS);
-  PedTimer_Delay(2000);
-  GPIOPinWrite(Ped_BASE, PedGreen_NS,0);
-}
+const struct PedFSM FSM_PedTL[4] =
+    {{Led_PedGreenEW,FSM_PedRed_EW},
+     {Led_PedRedEW, FSM_PedRed_EW},
+     {Led_PedGreenNS,  FSM_PedRed_NS},
+     {Led_PedRedNS, FSM_PedRed_NS}};

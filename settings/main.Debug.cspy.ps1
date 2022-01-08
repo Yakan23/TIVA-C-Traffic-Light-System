@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "D:\IAR\common\bin\cspybat" -f "E:\Embedded - 211\Project\settings\main.Debug.general.xcl" --backend -f "E:\Embedded - 211\Project\settings\main.Debug.driver.xcl" 
+& "D:\IAR\common\bin\cspybat" -f "E:\Embedded - 211\Project\Embd-project\settings\main.Debug.general.xcl" --backend -f "E:\Embedded - 211\Project\Embd-project\settings\main.Debug.driver.xcl" 
 }
 else
 {
-& "D:\IAR\common\bin\cspybat" -f "E:\Embedded - 211\Project\settings\main.Debug.general.xcl" --debug_file=$debugfile --backend -f "E:\Embedded - 211\Project\settings\main.Debug.driver.xcl" 
+& "D:\IAR\common\bin\cspybat" -f "E:\Embedded - 211\Project\Embd-project\settings\main.Debug.general.xcl" --debug_file=$debugfile --backend -f "E:\Embedded - 211\Project\Embd-project\settings\main.Debug.driver.xcl" 
 }

@@ -7,22 +7,16 @@
 #include "inc/hw_memmap.h"
 #include "tm4c123gh6pm.h"
 
-#define CarTimerNS TIMER0_BASE
-#define CarTimerEW TIMER1_BASE
+#define CarTimer TIMER1_BASE
 #define PedTimer TIMER2_BASE
 
-void initCar_NS(void);
-void initCar_EW(void);
+void initCarTimer(void);
 void initPedTimer(void);
-void initTimer3A(void);
 
-void CarNS_Delay(uint32_t delay);
-void CarEW_Delay(uint32_t delay);
+void CarTimer_Delay(uint32_t delay);
 void PedTimer_Delay(uint32_t delay);
-void Timer3A_Delay(uint32_t delay);
 
-void CarNS_TIMA(void);
 
-void CarEW_TIMA(void);
+void CarTimer_TIMA(void);
 
-void PedTimer_TIMA(void);
+void PedTimer_TIMER(void);

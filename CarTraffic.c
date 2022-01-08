@@ -1,95 +1,23 @@
 #include "CarTraffic.h"
 
+volatile uint8_t FSM_Car_State;
 
-
-enum States  State;
-
-void initLight_EW(void)
+void initCarLight(void)
 {
   SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
   SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOA);
-  GPIOPinTypeGPIOOutput(Car_BASE, GreenEW | YellowEW | RedEW);
-  
+  GPIOPinTypeGPIOOutput(Car_BASE, GreenEW | YellowEW | RedEW | GreenNS | YellowNS | RedNS);
+  GPIOPinWrite(Car_BASE, GreenNS | YellowNS | RedNS, FSM_CarTL[FSM_Car_State].Out);
+  GPIOPinWrite(Car_BASE, GreenEW | YellowEW | RedEW, FSM_CarTL[FSM_Car_State].Out);
+  CarTraffic_Delay(FSM_CarTL[FSM_Car_State].Time);
 }
 
-void initLight_NS(void)
-{
-  SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
-  SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOA);
-  GPIOPinTypeGPIOOutput(Car_BASE, GreenNS | YellowNS | RedNS);
-}
-
-void EW_Light(void)
-{
-  switch (State)
-  {
-
-  case Green1:
-    
-    GPIOPinWrite(Car_BASE, GreenNS|YellowNS,0);
-    GPIOPinWrite(Car_BASE, YellowEW | RedEW, 0);
-    GPIOPinWrite(Car_BASE, GreenEW, GreenEW);
-    CarEW_Delay(5000);
-    //while(TimerIntStatus(CarTimerEW,TIMER_TIMA_TIMEOUT)!=1);
-    State = Yellow1;
-
-    break;
-
-  case Yellow1:
-    GPIOPinWrite(Car_BASE, GreenEW | RedEW, 0);
-    GPIOPinWrite(Car_BASE, YellowEW, YellowEW);
-    CarEW_Delay(2000);
-    
-    State = Red1;
-    break;
-
-  case Red1:
-    GPIOPinWrite(Car_BASE, GreenEW | YellowEW, 0);
-    GPIOPinWrite(Car_BASE, RedEW, RedEW);
-    CarEW_Delay(1000);
-    State = Green2;
-
-    
-    break;
-
-  default:
-    
-    break;
-  }
-}
-
-void NS_Light(void)
-{
-  switch (State)
-  {
-
-  case Green2:
-
-    GPIOPinWrite(Car_BASE, GreenEW|YellowEW , 0);
-    GPIOPinWrite(Car_BASE, YellowNS | RedNS, 0);
-    GPIOPinWrite(Car_BASE, GreenNS, GreenNS);
-    CarNS_Delay(5000);
-    State = Yellow2;
-    break;
-
-  case Yellow2:
-    GPIOPinWrite(Car_BASE, GreenNS | RedNS, 0);
-    GPIOPinWrite(Car_BASE, YellowNS, YellowNS);
-    CarNS_Delay(2000);
-    State = Red2;
-    break;
-
-  case Red2:
-    GPIOPinWrite(Car_BASE, GreenNS | YellowNS, 0);
-    GPIOPinWrite(Car_BASE, RedNS, RedNS);
-    CarNS_Delay(1000);
-    State = Green1;
-    break;
-
-  default:
-    break;
-  }
-}
-
-
-
+const struct CarFSM FSM_CarTL[6] =
+    {
+        //led output   time delay  nextstate
+        {Led_CarGreenEW, 5000, FSM_CarYellowEW},
+        {Led_CarYellowEW, 2000, FSM_CarRedEW},
+        {Led_CarRedEW, 1000, FSM_CarGreenNS},
+        {Led_CarGreenNS, 5000, FSM_CarYellowNS},
+        {Led_CarYellowNS, 2000, FSM_CarRedNS},
+        {Led_CarRedNS, 1000, FSM_CarGreenEW}};
