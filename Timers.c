@@ -33,8 +33,11 @@ void CarTraffic_Delay(uint32_t delay)
 
 void PedTimer_Delay(uint32_t delay)
 {
+    
     delay = (delay * 16000) - 1;
     TimerLoadSet(PedTimer, TIMER_A, delay);
+
+
 }
 
 void CarTimer_TIMEOUT(void)
@@ -50,13 +53,17 @@ void CarTimer_TIMEOUT(void)
 void PedTimer_TIMA(void)
 {
     //Disable the timer and Clear Interrupt
-    TimerIntClear(PedTimer,TIMER_TIMA_TIMEOUT);
+    TimerDisable(PedTimer, TIMER_A);
+    TimerIntClear(PedTimer, TIMER_TIMA_TIMEOUT);
     //Fsm state change
-    FSM_Ped_State=FSM_PedTL[FSM_Ped_State].Next;
+    FSM_Ped_State = FSM_PedTL[FSM_Ped_State].Next;
 
     //Write All traffic Light LEDs
-  
-    GPIOPinWrite(Ped_BASE, PedGreen_NS|PedRed_NS, FSM_PedTL[FSM_Ped_State].PedOut);
-    GPIOPinWrite(Ped_BASE, PedGreen_EW|PedRed_EW, FSM_PedTL[FSM_Ped_State].PedOut);
+    GPIOPinWrite(Car_BASE, GreenNS|YellowNS|RedNS, FSM_PedTL[FSM_Ped_State].CarOut[FSM_Car_State]);
+    GPIOPinWrite(Car_BASE, GreenEW|YellowEW|RedEW, FSM_PedTL[FSM_Ped_State].CarOut[FSM_Car_State]);
+    
+    GPIOPinWrite(Ped_BASE, PedGreen_NS | PedRed_NS, FSM_PedTL[FSM_Ped_State].PedOut);
+    GPIOPinWrite(Ped_BASE, PedGreen_EW | PedRed_EW, FSM_PedTL[FSM_Ped_State].PedOut);
+    TimerEnable(CarTimer,TIMER_A);
 
 }

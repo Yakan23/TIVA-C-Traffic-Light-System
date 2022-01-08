@@ -20,7 +20,6 @@
 #define Led_PedGreenEW (PedRed_NS | PedGreen_EW)
 #define Led_PedRedEW (PedRed_NS | PedRed_EW)
 
-
 //****************************************************
 //Define the states of Pedestrian Traffic Light
 //****************************************************
@@ -32,7 +31,8 @@
 
 struct PedFSM
 {
-  uint8_t PedOut;    // output bits for pedestrian traffic led
+  uint8_t PedOut; // output bits for pedestrian traffic led
+  uint8_t CarOut[6];
   uint8_t Next;      // The next state
 };
 //***************************************************

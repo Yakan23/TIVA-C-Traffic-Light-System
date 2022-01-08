@@ -14,12 +14,11 @@ int main()
 
   initCarTimer();
   initCarLight();
-  IntPrioritySet(INT_TIMER0A,0x10);
+  IntPrioritySet(INT_TIMER2A,0x10);
   IntPrioritySet(INT_GPIOF, 0x20);
   IntPrioritySet(INT_TIMER1A, 0x30);
   initButton_EW(); //gpio
   initPedLight_EW();
-  initPedLight_NS();
   initPedTimer();
 
 

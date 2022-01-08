@@ -61,7 +61,7 @@
         <EnableCache>0</EnableCache>
     </ArmDriver>
     <DebugChecksum>
-        <Checksum>3239064030</Checksum>
+        <Checksum>2475774640</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -83,8 +83,8 @@
     <Breakpoints2>
         <Bp0>_ 0 "EMUL_CODE" "0xaaa" 0 0 1 "" 0 "" 0</Bp0>
         <Bp1>_ 0 "EMUL_CODE" "0x338" 0 0 1 "" 0 "" 0</Bp1>
-        <Bp2>_ 1 "EMUL_CODE" "{$PROJ_DIR$\Timers.c}.55.5" 0 0 1 "" 0 "" 0</Bp2>
-        <Bp3>_ 1 "EMUL_CODE" "{$PROJ_DIR$\Buttons.c}.40.5" 0 0 1 "" 0 "" 0</Bp3>
+        <Bp2>_ 0 "EMUL_CODE" "0x966" 0 0 1 "" 0 "" 0</Bp2>
+        <Bp3>_ 0 "EMUL_CODE" "0x928" 0 0 1 "" 0 "" 0</Bp3>
         <Count>4</Count>
     </Breakpoints2>
     <LogFile>
