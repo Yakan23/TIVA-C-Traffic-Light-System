@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V9.10.2.313/W64 for ARM                  08/Jan/2022  23:48:24
+# IAR ELF Linker V9.10.2.313/W64 for ARM                  09/Jan/2022  01:59:15
 # Copyright 2007-2021 IAR Systems AB.
 #
 #    Output file  =  E:\Embedded - 211\Project\Embd-project\Debug\Exe\main.out
@@ -72,16 +72,16 @@ do not initialize { rw section .noinit };
 "P1":                                    0xbe0
   .text            ro code        0x26c  0x408  gpio.o [3]
   .text            ro code        0x674  0x160  interrupt.o [3]
-  .text            ro code        0x7d4  0x1b0  Timers.o [1]
-  .text            ro code        0x984   0x50  sysctl.o [3]
-  .text            ro code        0x9d4   0xa2  timer.o [3]
-  .text            ro code        0xa78    0x4  cpu.o [3]
-  .text            ro code        0xa7c  0x1ac  Buttons.o [1]
-  .text            ro code        0xc28   0x68  CarTraffic.o [1]
-  .text            ro code        0xc90   0x3e  main.o [1]
-  .text            ro code        0xcd0   0x20  PedTraffic.o [1]
-  .text            ro code        0xcf0   0x38  zero_init3.o [5]
-  .text            ro code        0xd28   0x28  data_init.o [5]
+  .text            ro code        0x7d4  0x1c0  Timers.o [1]
+  .text            ro code        0x994   0x50  sysctl.o [3]
+  .text            ro code        0x9e4   0xa2  timer.o [3]
+  .text            ro code        0xa88    0x4  cpu.o [3]
+  .text            ro code        0xa8c  0x1b4  Buttons.o [1]
+  .text            ro code        0xc40   0x68  CarTraffic.o [1]
+  .text            ro code        0xca8   0x38  zero_init3.o [5]
+  .text            ro code        0xce0   0x28  data_init.o [5]
+  .text            ro code        0xd08   0x26  main.o [1]
+  .text            ro code        0xd30   0x20  PedTraffic.o [1]
   .rodata          const          0xd50   0x24  CarTraffic.o [1]
   .text            ro code        0xd74   0x22  fpinit_M.o [4]
   .iar.init_table  const          0xd98   0x10  - Linker created -
@@ -137,11 +137,11 @@ command line/config:
     Total:
 
 E:\Embedded - 211\Project\Embd-project\Debug\Obj: [1]
-    Buttons.o             428                 1
+    Buttons.o             436                 1
     CarTraffic.o          104       36        1
     PedTraffic.o           32       32
-    Timers.o              432
-    main.o                 62
+    Timers.o              448
+    main.o                 38
     startup_ewarm.o        30      620      512
     -------------------------------------------
     Total:              1'088      688      514
@@ -195,10 +195,9 @@ Entry                       Address   Size  Type      Object
 .iar.init_table$$Base         0xd98          --   Gb  - Linker created -
 .iar.init_table$$Limit        0xda8          --   Gb  - Linker created -
 ?main                         0xe05         Code  Gb  cmain.o [5]
-ButtonINT_EW                  0xadd  0x126  Code  Gb  Buttons.o [1]
-CPUwfi                        0xa79    0x4  Code  Gb  cpu.o [3]
-CarTimer_TIMEOUT              0x86d   0x68  Code  Gb  Timers.o [1]
-CarTraffic_Delay              0x841   0x16  Code  Gb  Timers.o [1]
+CPUwfi                        0xa89    0x4  Code  Gb  cpu.o [3]
+CarTimer_TIMEOUT              0x87d   0x68  Code  Gb  Timers.o [1]
+CarTraffic_Delay              0x851   0x16  Code  Gb  Timers.o [1]
 FSM_CarTL                     0xd50   0x24  Data  Gb  CarTraffic.o [1]
 FSM_Car_State           0x2000'026d    0x1  Data  Gb  CarTraffic.o [1]
 FSM_PedTL                     0xda8   0x20  Data  Gb  PedTraffic.o [1]
@@ -218,28 +217,29 @@ IntEnable                     0x6bf   0x56  Code  Gb  interrupt.o [3]
 IntPrioritySet                0x69b   0x24  Code  Gb  interrupt.o [3]
 IntRegister                   0x675   0x26  Code  Gb  interrupt.o [3]
 NmiSR                         0xde1    0x2  Code  Lc  startup_ewarm.o [1]
-PedTimer_Delay                0x857   0x16  Code  Gb  Timers.o [1]
-PedTimer_TIMA                 0x8d5   0x8c  Code  Gb  Timers.o [1]
+PedButtonINT                  0xaf5  0x126  Code  Gb  Buttons.o [1]
+PedTimer_Delay                0x867   0x16  Code  Gb  Timers.o [1]
+PedTimer_TIMEOUT              0x8e5   0x8c  Code  Gb  Timers.o [1]
 Region$$Table$$Base           0xd98          --   Gb  - Linker created -
 Region$$Table$$Limit          0xda8          --   Gb  - Linker created -
 ResetISR                      0xdc9   0x14  Code  Gb  startup_ewarm.o [1]
-SysCtlDelay                   0x9c5    0x8  Code  Gb  sysctl.o [3]
-SysCtlPeripheralEnable        0x9a5    0x8  Code  Gb  sysctl.o [3]
-SysCtlPeripheralReady         0x985    0x8  Code  Gb  sysctl.o [3]
-SysCtlSleep                   0x9c1    0x4  Code  Gb  sysctl.o [3]
-TimerConfigure                0x9ed   0x52  Code  Gb  timer.o [3]
-TimerDisable                  0x9e1    0xc  Code  Gb  timer.o [3]
-TimerEnable                   0x9d5    0xc  Code  Gb  timer.o [3]
-TimerIntClear                 0xa73    0x4  Code  Gb  timer.o [3]
-TimerIntEnable                0xa61    0x4  Code  Gb  timer.o [3]
-TimerLoadSet                  0xa51   0x10  Code  Gb  timer.o [3]
+SysCtlDelay                   0x9d5    0x8  Code  Gb  sysctl.o [3]
+SysCtlPeripheralEnable        0x9b5    0x8  Code  Gb  sysctl.o [3]
+SysCtlPeripheralReady         0x995    0x8  Code  Gb  sysctl.o [3]
+SysCtlSleep                   0x9d1    0x4  Code  Gb  sysctl.o [3]
+TimerConfigure                0x9fd   0x52  Code  Gb  timer.o [3]
+TimerDisable                  0x9f1    0xc  Code  Gb  timer.o [3]
+TimerEnable                   0x9e5    0xc  Code  Gb  timer.o [3]
+TimerIntClear                 0xa83    0x4  Code  Gb  timer.o [3]
+TimerIntEnable                0xa71    0x4  Code  Gb  timer.o [3]
+TimerLoadSet                  0xa61   0x10  Code  Gb  timer.o [3]
 _GPIOIntNumberGet             0x26d   0x40  Code  Lc  gpio.o [3]
 __cmain                       0xe05         Code  Gb  cmain.o [5]
 __exit                        0xe39   0x14  Code  Gb  exit.o [6]
-__iar_data_init3              0xd29   0x28  Code  Gb  data_init.o [5]
+__iar_data_init3              0xce1   0x28  Code  Gb  data_init.o [5]
 __iar_init_vfp                0xd75         Code  Gb  fpinit_M.o [4]
 __iar_program_start           0xde9         Code  Gb  cstartup_M.o [5]
-__iar_zero_init3              0xcf1   0x38  Code  Gb  zero_init3.o [5]
+__iar_zero_init3              0xca9   0x38  Code  Gb  zero_init3.o [5]
 __low_level_init              0xe23    0x4  Code  Gb  low_level_init.o [2]
 __vector_table                  0x0  0x26c  Data  Gb  startup_ewarm.o [1]
 _call_main                    0xe11         Code  Gb  cmain.o [5]
@@ -252,12 +252,12 @@ g_ppui32GPIOIntMapSnowflake
                               0x59c   0xd8  Data  Lc  gpio.o [3]
 g_pui32EnRegs                 0x7c0   0x14  Data  Lc  interrupt.o [3]
 g_pui32Regs                   0x724   0x9c  Data  Lc  interrupt.o [3]
-initButton_EW                 0xa7d   0x60  Code  Gb  Buttons.o [1]
-initCarLight                  0xc29   0x68  Code  Gb  CarTraffic.o [1]
-initCarTimer                  0x7d5   0x36  Code  Gb  Timers.o [1]
-initPedLight_EW               0xcd1   0x20  Code  Gb  PedTraffic.o [1]
-initPedTimer                  0x80b   0x36  Code  Gb  Timers.o [1]
-main                          0xc91   0x3e  Code  Gb  main.o [1]
+initButtons                   0xa8d   0x68  Code  Gb  Buttons.o [1]
+initCarLight                  0xc41   0x68  Code  Gb  CarTraffic.o [1]
+initCarTimer                  0x7d5   0x3e  Code  Gb  Timers.o [1]
+initPedLights                 0xd31   0x20  Code  Gb  PedTraffic.o [1]
+initPedTimer                  0x813   0x3e  Code  Gb  Timers.o [1]
+main                          0xd09   0x26  Code  Gb  main.o [1]
 pui32Stack              0x2000'0270  0x200  Data  Lc  startup_ewarm.o [1]
 
 

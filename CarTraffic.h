@@ -11,7 +11,6 @@
 
 #define Car_BASE GPIO_PORTA_BASE
 
-
 #define GreenNS GPIO_PIN_2
 #define YellowNS GPIO_PIN_3
 #define RedNS GPIO_PIN_4
@@ -44,13 +43,15 @@ struct CarFSM
 extern const struct CarFSM FSM_CarTL[6];
 extern volatile uint8_t FSM_Car_State;
 
+void initCarLight(void);
+//**************************//
+//      initPedLights       //
+//**************************//
 /*
-    function: initCarLight
-    parameters: void
+->  parameters: void
     return type: void
     description: 
-    initializes GPIO ports used inside the East West traffic light.
-    initializes timer used inside the East West traffic light.
+  ->  Assigning system clock to GPIO PortA
+      Setting Pins 2,3,4,5,6,7 as output pins
+      Assigns the delay of the first State
 */
-
-void initCarLight(void);

@@ -1,8 +1,11 @@
 #include "Timers.h"
 #include "CarTraffic.h"
 #include "PedTraffic.h"
+
+
 void initCarTimer(void)
 {
+    IntPrioritySet(INT_TIMER1A, 0x30);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER1);
     TimerDisable(CarTimer, TIMER_A);
     SysCtlPeripheralReady(SYSCTL_PERIPH_TIMER1);
@@ -15,6 +18,7 @@ void initCarTimer(void)
 
 void initPedTimer(void)
 {
+    IntPrioritySet(INT_TIMER2A, 0x10);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER2);
     TimerDisable(PedTimer, TIMER_A);
     SysCtlPeripheralReady(SYSCTL_PERIPH_TIMER2);
@@ -33,11 +37,9 @@ void CarTraffic_Delay(uint32_t delay)
 
 void PedTimer_Delay(uint32_t delay)
 {
-    
+
     delay = (delay * 16000) - 1;
     TimerLoadSet(PedTimer, TIMER_A, delay);
-
-
 }
 
 void CarTimer_TIMEOUT(void)
@@ -50,7 +52,7 @@ void CarTimer_TIMEOUT(void)
     TimerEnable(CarTimer, TIMER_A);
 }
 
-void PedTimer_TIMA(void)
+void PedTimer_TIMEOUT(void)
 {
     //Disable the timer and Clear Interrupt
     TimerDisable(PedTimer, TIMER_A);
@@ -59,11 +61,10 @@ void PedTimer_TIMA(void)
     FSM_Ped_State = FSM_PedTL[FSM_Ped_State].Next;
 
     //Write All traffic Light LEDs
-    GPIOPinWrite(Car_BASE, GreenNS|YellowNS|RedNS, FSM_PedTL[FSM_Ped_State].CarOut[FSM_Car_State]);
-    GPIOPinWrite(Car_BASE, GreenEW|YellowEW|RedEW, FSM_PedTL[FSM_Ped_State].CarOut[FSM_Car_State]);
-    
+    GPIOPinWrite(Car_BASE, GreenNS | YellowNS | RedNS, FSM_PedTL[FSM_Ped_State].CarOut[FSM_Car_State]);
+    GPIOPinWrite(Car_BASE, GreenEW | YellowEW | RedEW, FSM_PedTL[FSM_Ped_State].CarOut[FSM_Car_State]);
+
     GPIOPinWrite(Ped_BASE, PedGreen_NS | PedRed_NS, FSM_PedTL[FSM_Ped_State].PedOut);
     GPIOPinWrite(Ped_BASE, PedGreen_EW | PedRed_EW, FSM_PedTL[FSM_Ped_State].PedOut);
-    TimerEnable(CarTimer,TIMER_A);
-
+    TimerEnable(CarTimer, TIMER_A);
 }

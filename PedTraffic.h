@@ -28,38 +28,31 @@
 #define FSM_PedGreen_NS (2)
 #define FSM_PedRed_NS (3)
 
-
+//***************************************************
+//Define Pedestrian Traffic Light Struct
+//***************************************************
 struct PedFSM
 {
-  uint8_t PedOut; // output bits for pedestrian traffic led
-  uint8_t CarOut[6];
-  uint8_t Next;      // The next state
+  uint8_t PedOut; // output of Pedestrian Traffic Leds
+  uint8_t CarOut[6]; // output of Car Traffic Leds
+  uint8_t Next; // Next State
 };
 //***************************************************
 //Declare a constant array of type Pedestrian fsm
 //***************************************************
 extern const struct PedFSM FSM_PedTL[4];
 extern volatile uint8_t FSM_Ped_State;
+
+void initPedLights(void);
+//**************************//
+//      initPedLights       //
+//**************************//
+
 /*
-    function: initLightPedestrian_EW
+->  function: initPedLights
     parameters: void
     return type: void
     description: 
-    initializes GPIO ports used inside the Pedestrian EastW traffic light.
-    initializes timer used inside the Pedestrian EastW traffic light.
+    ->  Assigning the system clock to the GPIO PortC.
+        Setting the Pins 4, 5, 6, 7 as output pins.
 */
-
-void initPedLight_EW(void);
-
-/*
-    function: initLightPedestrian_NS
-    parameters: void
-    return type: void
-    description: 
-    initializes GPIO ports used inside the Pedestrian North South traffic light.
-    initializes timer used inside the Pedestrian North South traffic light.
-    Interrupts the EW Traffic Light
-*/
-
-void initPedLight_NS(void);
-

@@ -5,124 +5,64 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\..\Tutorials\Project\Tutorial 4\Bitwise_Operation.h</file>
-            <file>$PROJ_DIR$\Buttons.h</file>
-            <file>$PROJ_DIR$\CarTraffic.c</file>
-            <file>$PROJ_DIR$\main.c</file>
-            <file>$PROJ_DIR$\Buttons.c</file>
-            <file>$PROJ_DIR$\CarTraffic.h</file>
-            <file>$PROJ_DIR$\PedTraffic.c</file>
-            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
-            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
-            <file>D:\TivaWare\driverlib\gpio.h</file>
-            <file>$PROJ_DIR$\tm4c123gh6pm.h</file>
-            <file>D:\TivaWare\driverlib\sysctl.h</file>
-            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
-            <file>$PROJ_DIR$\Debug\Obj\PedTraffic.o</file>
+            <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C123GH6.icf</file>
+            <file>$PROJ_DIR$\Debug\Exe\main.out</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+            <file>D:\TivaWare\inc\hw_memmap.h</file>
+            <file>$PROJ_DIR$\Debug\List\main.map</file>
+            <file>D:\TivaWare\inc\hw_gpio.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\Timers.o</file>
+            <file>$PROJ_DIR$\Bitwise_Operation.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
             <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
-            <file>$PROJ_DIR$\Timers.c</file>
+            <file>D:\TivaWare\driverlib\timer.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>D:\TivaWare\driverlib\systick.h</file>
+            <file>D:\TivaWare\inc\hw_types.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
             <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
             <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
-            <file>D:\TivaWare\driverlib\systick.h</file>
-            <file>D:\TivaWare\driverlib\timer.h</file>
-            <file>D:\TivaWare\inc\hw_nvic.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\PedTraffic.o</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
             <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
-            <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C123GH6.icf</file>
-            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+            <file>D:\TivaWare\driverlib\sysctl.h</file>
             <file>$PROJ_DIR$\Debug\Obj\CarTraffic.o</file>
-            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
-            <file>D:\TivaWare\inc\hw_types.h</file>
-            <file>$PROJ_DIR$\PedTraffic.h</file>
-            <file>D:\TivaWare\examples\boards\ek-tm4c123gxl\hello\startup_ewarm.c</file>
-            <file>$PROJ_DIR$\Debug\Obj\Timers.o</file>
-            <file>D:\TivaWare\inc\hw_gpio.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
-            <file>$PROJ_DIR$\Debug\Exe\main.out</file>
-            <file>D:\TivaWare\driverlib\interrupt.h</file>
-            <file>D:\TivaWare\inc\hw_memmap.h</file>
-            <file>$PROJ_DIR$\Bitwise_Operation.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\Buttons.o</file>
             <file>D:\TivaWare\driverlib\ewarm\Exe\driverlib.a</file>
-            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+            <file>D:\TivaWare\driverlib\interrupt.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
             <file>$PROJ_DIR$\Debug\Obj\startup_ewarm.o</file>
+            <file>D:\TivaWare\driverlib\gpio.h</file>
+            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\Buttons.o</file>
+            <file>D:\TivaWare\examples\boards\ek-tm4c123gxl\hello\startup_ewarm.c</file>
             <file>$PROJ_DIR$\Timers.h</file>
-            <file>$PROJ_DIR$\Debug\List\main.map</file>
+            <file>$PROJ_DIR$\tm4c123gh6pm.h</file>
+            <file>D:\TivaWare\inc\hw_nvic.h</file>
+            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+            <file>$PROJ_DIR$\..\Tutorials\Project\Tutorial 4\Bitwise_Operation.h</file>
+            <file>$PROJ_DIR$\CarTraffic.c</file>
+            <file>$PROJ_DIR$\Buttons.c</file>
+            <file>$PROJ_DIR$\CarTraffic.h</file>
+            <file>$PROJ_DIR$\main.c</file>
+            <file>$PROJ_DIR$\PedTraffic.c</file>
+            <file>$PROJ_DIR$\Timers.c</file>
+            <file>$PROJ_DIR$\Buttons.h</file>
+            <file>$PROJ_DIR$\PedTraffic.h</file>
         </outputs>
         <file>
-            <name>$PROJ_DIR$\CarTraffic.c</name>
+            <name>$PROJ_DIR$\Debug\Exe\main.out</name>
             <outputs>
                 <tool>
-                    <name>ICCARM</name>
-                    <file> 26</file>
+                    <name>ILINK</name>
+                    <file> 4</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
-                    <name>ICCARM</name>
-                    <file> 17 21 33 24 34 25 16 14 7 9 36 11 18 37 38 5 10</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\main.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 41</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 17 21 33 24 34 25 16 14 7 9 36 11 18 19 32 37 38 1 5 29 43 10</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\Buttons.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 39</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 17 21 33 24 34 25 16 14 7 9 36 11 18 19 32 37 38 1 5 29 43 10</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\PedTraffic.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 13</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 17 21 33 24 34 25 16 14 7 9 36 11 18 19 37 38 5 29 43 10</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\Timers.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 31</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 17 21 33 24 34 25 16 14 7 9 36 11 18 19 37 38 5 29 43 10</file>
+                    <name>ILINK</name>
+                    <file> 0 29 26 35 19 23 30 22 18 6 9 27</file>
                 </tool>
             </inputs>
         </file>
@@ -131,28 +71,88 @@
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 42</file>
+                    <file> 27</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 17 21 33 34 16 7 20 28</file>
+                    <file> 17 20 15 8 16 12 34 14</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\Debug\Exe\main.out</name>
+            <name>$PROJ_DIR$\CarTraffic.c</name>
             <outputs>
                 <tool>
-                    <name>ILINK</name>
-                    <file> 44</file>
+                    <name>ICCARM</name>
+                    <file> 22</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
-                    <name>ILINK</name>
-                    <file> 22 27 12 23 8 40 39 26 13 31 41 42</file>
+                    <name>ICCARM</name>
+                    <file> 17 20 15 25 8 2 16 10 12 28 24 21 13 3 7 39 33</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Buttons.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 30</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 17 20 15 25 8 2 16 10 12 28 24 21 13 11 5 3 7 43 39 44 32 33</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 9</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 17 20 15 25 8 2 16 10 12 28 24 21 13 11 5 3 7 43 39 44 32 33</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\PedTraffic.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 18</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 17 20 15 25 8 2 16 10 12 28 24 21 13 11 3 7 39 44 32 33</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Timers.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 6</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 17 20 15 25 8 2 16 10 12 28 24 21 13 11 3 7 39 44 32 33</file>
                 </tool>
             </inputs>
         </file>
@@ -161,17 +161,17 @@
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 35 44</file>
+                    <file> 1 4</file>
                 </tool>
             </outputs>
         </file>
         <forcedrebuild>
-            <name>[MULTI_TOOL]</name>
-            <tool>ILINK</tool>
-        </forcedrebuild>
-        <forcedrebuild>
             <name>$PROJ_DIR$\main.c</name>
             <tool>ICCARM</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
         </forcedrebuild>
         <forcedrebuild>
             <name>[REBUILD_ALL]</name>

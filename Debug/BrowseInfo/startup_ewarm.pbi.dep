@@ -1,2 +1,6 @@
 E:\Embedded\ -\ 211\Project\Embd-project\Debug\BrowseInfo\startup_ewarm.pbi: \
-  D:\TivaWare\examples\boards\ek-tm4c123gxl\hello\startup_ewarm.c
+  D:\TivaWare\examples\boards\ek-tm4c123gxl\hello\startup_ewarm.c \
+  D:\IAR\arm\inc\c\stdint.h D:\IAR\arm\inc\c\ycheck.h \
+  D:\IAR\arm\inc\c\yvals.h D:\IAR\arm\inc\c\DLib_Defaults.h \
+  D:\IAR\arm\inc\c\DLib_Config_Normal.h D:\IAR\arm\inc\c\DLib_Product.h \
+  D:\TivaWare\inc\hw_nvic.h D:\TivaWare\inc\hw_types.h
