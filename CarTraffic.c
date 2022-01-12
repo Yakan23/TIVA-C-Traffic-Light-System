@@ -12,6 +12,25 @@ void initCarLight(void)
   CarTraffic_Delay(FSM_CarTL[FSM_Car_State].Time);
 }
 
+/*
+We have defined 6 states in our program  
+each state defined as an index in the FSM_CarTL
+
+FSM_CarGreenEW (0)
+FSM_CarYellowEW (1)
+FSM_CarRedEW (2)
+FSM_CarGreenNS (3)
+FSM_CarYellowNS (4)
+FSM_CarRedNS (5)
+
+Each state represents the output of a Car traffic
+for example FSM_CarGreenEW represents Green (Led_CarGreenEW) light working in the East West car traffic
+In addition to the output of the Car Traffic light, we added the time it takes, and its next state
+
+for example FSM_CarGreenEW has a time delay of 5 seconds and has a next state which the yellow traffic light (Led_CarYellowEW)
+which is another state called FSM_CarYellowEW which will have a delay of 2 seconds and a next state FSM_CarRedEW
+
+*/
 const struct CarFSM FSM_CarTL[6] =
     {
         //led output   time delay  nextstate

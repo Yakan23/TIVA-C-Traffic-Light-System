@@ -2,7 +2,6 @@
 #include "CarTraffic.h"
 #include "PedTraffic.h"
 
-
 void initCarTimer(void)
 {
     IntPrioritySet(INT_TIMER1A, 0x30);
@@ -42,6 +41,7 @@ void PedTimer_Delay(uint32_t delay)
     TimerLoadSet(PedTimer, TIMER_A, delay);
 }
 
+//Check CarTraffic.c for explanation of the code flow.
 void CarTimer_TIMEOUT(void)
 {
     TimerIntClear(CarTimer, TIMER_TIMA_TIMEOUT);
@@ -52,6 +52,7 @@ void CarTimer_TIMEOUT(void)
     TimerEnable(CarTimer, TIMER_A);
 }
 
+//Check PedTraffic.c for explanation of the code flow
 void PedTimer_TIMEOUT(void)
 {
     //Disable the timer and Clear Interrupt
