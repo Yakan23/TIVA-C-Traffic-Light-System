@@ -38,7 +38,7 @@ void initPedTimer(void);
     description: 
     ->  Setting the highest priority interrupt for the Ped Timer interrupt
         Enabling the timer 2 (Ped timer)
-        Disabling timer 2A for before configureation
+        Disabling timer 2A before configuration
         Configure timer 2A as a down periodic timer
         Enabling interrupt on timer 2A
         Enabling timer 2A
