@@ -1,21 +1,18 @@
+#pragma once
+
 #include "Buttons.h"
-#include "Timers.h"
-#include "CarTraffic.h"
-#include "PedTraffic.h"
-
-
-
-
+#include "../TrafficLights/CarTraffic.h"
+#include "../TrafficLights/PedTraffic.h"
 
 extern volatile uint8_t FSM_Ped_State = 0;
-
 
 void initButtons(void)
 {
   IntPrioritySet(INT_GPIOF, 0x20);
   SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
   GPIOUnlockPin(GPIO_PORTF_BASE, GPIO_PIN_0 | GPIO_PIN_4);
-  while (!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOF));
+  while (!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOF))
+    ;
   GPIOPinTypeGPIOInput(PedButtons, ButtonEW | ButtonNS);
   GPIOPadConfigSet(PedButtons, ButtonEW, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU);
   GPIOPadConfigSet(PedButtons, ButtonNS, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU);
@@ -28,11 +25,11 @@ void initButtons(void)
 void PedButtonINT(void)
 {
   if ((Get_Bit(GPIO_PORTF_DATA_R, 0)) == 0)
-  { //EW
+  { // EW
     GPIOIntClear(GPIO_PORTF_BASE, GPIO_INT_PIN_0);
     TimerDisable(CarTimer, TIMER_A);
 
-    //Change The FSM state of pedestrian
+    // Change The FSM state of pedestrian
     FSM_Ped_State = FSM_PedGreen_EW;
 
     GPIOPinWrite(Car_BASE, GreenNS | YellowNS | RedNS, FSM_PedTL[FSM_Ped_State].CarOut[FSM_Car_State]);
@@ -43,12 +40,12 @@ void PedButtonINT(void)
     TimerEnable(PedTimer, TIMER_A);
   }
 
-  else if ((Get_Bit(GPIO_PORTF_DATA_R, 4)) == 0) //ns
+  else if ((Get_Bit(GPIO_PORTF_DATA_R, 4)) == 0) // ns
   {
     GPIOIntClear(GPIO_PORTF_BASE, GPIO_INT_PIN_4);
     TimerDisable(CarTimer, TIMER_A);
 
-    //Change The FSM state of pedestrian
+    // Change The FSM state of pedestrian
     FSM_Ped_State = FSM_PedGreen_NS;
 
     GPIOPinWrite(Car_BASE, GreenNS | YellowNS | RedNS, FSM_PedTL[FSM_Ped_State].CarOut[FSM_Car_State]);

@@ -1,3 +1,5 @@
+#pragma once
+
 #include "CarTraffic.h"
 
 volatile uint8_t FSM_Car_State;
@@ -13,7 +15,7 @@ void initCarLight(void)
 }
 
 /*
-We have defined 6 states in our program  
+We have defined 6 states in our program
 each state defined as an index in the FSM_CarTL
 
 FSM_CarGreenEW (0)
@@ -33,7 +35,7 @@ which is another state called FSM_CarYellowEW which will have a delay of 2 secon
 */
 const struct CarFSM FSM_CarTL[6] =
     {
-        //led output   time delay  nextstate
+        // led output   time delay  nextstate
         {Led_CarGreenEW, 5000, FSM_CarYellowEW},
         {Led_CarYellowEW, 2000, FSM_CarRedEW},
         {Led_CarRedEW, 1000, FSM_CarGreenNS},

@@ -1,9 +1,10 @@
+#pragma once
+
 #include "stdio.h"
-#include "CarTraffic.h"
-#include "Timers.h"
-#include "Buttons.h"
-#include "PedTraffic.h"
-#include "Bitwise_Operation.h"
+#include "TrafficLights/CarTraffic.h"
+#include "Timers/Timers.h"
+#include "Buttons/Buttons.h"
+#include "TrafficLights/PedTraffic.h"
 
 int main()
 

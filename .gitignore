@@ -1,0 +1,5 @@
+#ignore all IAR  files
+main
+!main.c
+Debug/
+

@@ -1,13 +1,15 @@
+#pragma once
+
 #include "stdint.h"
 #include "stdbool.h"
 #include "stdio.h"
-#include "Bitwise_Operation.h"
+#include "../Helpers/Bitwise_Operation.h"
 #include "driverlib/interrupt.h"
 #include "driverlib/systick.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/gpio.h"
 #include "inc/hw_memmap.h"
-#include "tm4c123gh6pm.h"
+#include "../Helpers/tm4c123gh6pm.h"
 
 #define Car_BASE GPIO_PORTA_BASE
 
@@ -50,7 +52,7 @@ void initCarLight(void);
 /*
 ->  parameters: void
     return type: void
-    description: 
+    description:
   ->  Assigning system clock to GPIO PortA
       Setting Pins 2,3,4,5,6,7 as output pins
       Assigns the delay of the first State

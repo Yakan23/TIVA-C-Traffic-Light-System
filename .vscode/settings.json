@@ -1,0 +1,7 @@
+{
+  "C_Cpp.dimInactiveRegions": true,
+  "files.associations": {
+    "pedtraffic.h": "c",
+    "tm4c123gh6pm.h": "c"
+  }
+}

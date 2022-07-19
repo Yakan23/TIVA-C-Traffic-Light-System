@@ -1,6 +1,7 @@
+#pragma once
 #include "PedTraffic.h"
 #include "CarTraffic.h"
-#include "Timers.h"
+#include "../Timers/Timers.h"
 
 extern volatile uint8_t FSM_Ped_State;
 
@@ -14,7 +15,7 @@ void initPedLights(void)
 /*
 We have defined 4 states for the Pedestrian Traffic Lights
 
-each index has 
+each index has
   1) Output of the pedestrian
   2) Output of the Car Traffic Lights which depends on the current Pedestrian Traffic Light [Array of States]
     and the current state of the Car
@@ -36,7 +37,7 @@ to the North-South direction.
 */
 const struct PedFSM FSM_PedTL[4] =
 
-    { //Current state of ped//  //current state of Car depending on the ped// //ARRAY                            //next of the ped
+    { // Current state of ped//  //current state of Car depending on the ped// //ARRAY                            //next of the ped
         {Led_PedGreenEW, {Led_CarRedEW, Led_CarRedEW, Led_CarRedEW, Led_CarGreenNS, Led_CarYellowNS, Led_CarRedNS}, FSM_PedRed_EW},
         {Led_PedRedEW, {Led_CarGreenEW, Led_CarYellowEW, Led_CarRedNS, Led_CarGreenNS, Led_CarYellowNS, Led_CarRedNS}, FSM_PedRed_EW},
         {Led_PedGreenNS, {Led_CarGreenEW, Led_CarYellowEW, Led_CarRedNS, Led_CarRedNS, Led_CarRedNS, Led_CarRedNS}, FSM_PedRed_NS},
